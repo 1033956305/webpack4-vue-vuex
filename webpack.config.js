@@ -85,7 +85,7 @@ if (isDev) {
     )
 } else {
     config.entry = {
-        app: path.join(__dirname, 'src/index.js'),
+        app: path.join(__dirname, '../src/index.js'),
         vendor: ['vue']
     }
     config.output.filename = 'static/js/[name].[chunkHash:8].js'
