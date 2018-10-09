@@ -1,9 +1,9 @@
 // 打包资源
 const path = require('path')
-const HTMLPlugin = require('html-webpack-plugin')
+const HTMLPlugin = require('html-webpack-plugin') // 生成html入口文件，引入外部资源
 const VueLoaderPlugin = require('vue-loader/lib/plugin') // loader 15版本要加
 const webpack = require('webpack')
-const merge = require('webpack-merge')
+const merge = require('webpack-merge') // 混合打包工具
 // const ExtractPlugin = require('extract-text-webpack-plugin') // 打包css文件
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const baseConfig = require('./webpack.config.base')
@@ -38,7 +38,7 @@ if (isDev) {
                 {
                     test: /\.styl(us)?$/,
                     use: [
-                        'style-loader',
+                        'vue-style-loader',
                         'css-loader',
                         {
                             loader: 'postcss-loader',

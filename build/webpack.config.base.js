@@ -36,7 +36,7 @@ const config = {
                         loader: 'url-loader',
                         options: {
                             limit: 1024, // 文件大小
-                            name: 'static/img/[name]-[hash:8].[ext]'
+                            name: 'static/img/[path][name]-[hash:8].[ext]'
                         }
                     }
                 ]
