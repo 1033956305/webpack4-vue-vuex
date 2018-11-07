@@ -1,5 +1,6 @@
 // 打包资源
 const path = require('path')
+const createVueLoaderOptions = require('./vue-loader.config.js')
 
 const isDev = process.env.NODE_ENV === 'development' //判断是否开发环境
 console.log(process.env.NODE_ENV)
@@ -18,7 +19,8 @@ const config = {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                options: createVueLoaderOptions(isDev)
             },
             {
                 test: /\.jsx$/,
@@ -27,7 +29,7 @@ const config = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/
+                exclude: /node_modules/ // 忽略文件
             },
             {
                 test: /\.(gif|jpg|jpeg|png|svg)$/,
