@@ -43,7 +43,9 @@ if (isDev) {
                         {
                             loader: 'postcss-loader',
                             options: {
-                                sourceMap: true
+                                sourceMap: true,
+                                localIdentName: '[path]-[name]-[hash:8].[ext]',
+                                module: true
                             }
                         },
                         'stylus-loader'
